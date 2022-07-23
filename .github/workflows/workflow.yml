@@ -8,9 +8,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16.*"
-      - name: Setup app
+      - name: Install app
         run: make install
       - name: Testing
         run: make test
       - name: Linting
         run: make lint
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
