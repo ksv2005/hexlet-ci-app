@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: "16.*"
       - name: Setup app
-        run: make setup
+        run: make install
       - name: Testing
         run: make test
       - name: Linting
