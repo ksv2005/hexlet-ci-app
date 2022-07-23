@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 12
+      - name: Install Strapi
+        run: npm install @strapi/design-system
       - name: Setup app
         run: make setup
       - name: Testing
